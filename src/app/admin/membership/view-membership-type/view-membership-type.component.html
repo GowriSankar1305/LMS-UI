@@ -1,0 +1,52 @@
+<div id="layout-wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Membership types list</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="table-responsive">
+                                <table class="table mb-0 table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Type id</th>
+                                            <th>Category type name</th>
+                                            <th>Time line type</th>
+                                            <th>Time line limit</th>
+                                            <th>Borrowing limit</th>
+                                            <th>Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let mbsbType of membershipTypes">
+                                            <th scope="row">{{mbsbType.membershipTypeId}}</th>
+                                            <td>{{mbsbType.membershipType}}</td>
+                                            <td>{{mbsbType.membershipTimeline}}</td>
+                                            <td>{{mbsbType.timelineLimit}}</td>
+                                            <td>{{mbsbType.borrowingLimit}}</td>
+                                            <td>{{mbsbType.cost}}</td>
+                                        </tr>
+                                        <tr *ngIf="membershipTypes.length === 0">
+                                            <td colspan="6" align="center">No membership types added yet!</td> 
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

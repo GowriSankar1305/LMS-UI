@@ -1,0 +1,68 @@
+<div id="layout-wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                            <h4 class="mb-sm-0 font-size-18">Add a new book category</h4>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form (submit)="saveBookCategory()">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Create book category</h4>
+                                </div>
+                                <div class="card-body p-4">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="newCategoryName" class="form-label">Category name</label>
+                                                <input class="form-control" type="text" id="newCategoryName" name="newCategoryName" [(ngModel)]="newCategoryName">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <button type="submit" class="btn btn-success" [disabled]="isBtnDisabled" [innerHTML]="btnContent"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="h5 text-danger" [innerHTML]="errorMsg"></p>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="table-responsive">
+                                <table class="table mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Category id</th>
+                                            <th>Category Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let cat of categoryList">
+                                            <th scope="row">{{cat.categoryId}}</th>
+                                            <td>{{cat.categoryName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

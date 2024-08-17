@@ -27,9 +27,22 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/minia/css/preloader.min.css",
+              "./node_modules/minia/css/bootstrap.min.css",
+              "./node_modules/minia/css/icons.min.css",
+              "./node_modules/minia/css/app.min.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/minia/js/jquery.min.js",
+              "./node_modules/minia/js/bootstrap.bundle.min.js",
+              "./node_modules/minia/js/simplebar.min.js",
+              "./node_modules/minia/js/waves.min.js",
+              "./node_modules/minia/js/pace.min.js",
+              "./node_modules/minia/js/metisMenu.min.js",
+              "./node_modules/minia/js/feather.min.js"
+            ]
           },
           "configurations": {
             "production": {

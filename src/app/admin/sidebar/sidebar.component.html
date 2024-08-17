@@ -1,0 +1,71 @@
+<div class="topnav">
+  <div class="container-fluid">
+      <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+
+          <div class="collapse navbar-collapse" id="topnav-menu-content">
+              <ul class="navbar-nav">
+
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle arrow-none" [routerLink]="['/admin/dashboard']" id="topnav-dashboard" role="button">
+                          <i data-feather="home"></i><span data-key="t-dashboards">Dashboard</span>
+                      </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle arrow-none" id="topnav-pages" role="button">
+                          <i data-feather="grid"></i><span data-key="t-apps">Books</span> <div class="arrow-down"></div>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                          <a [routerLink]="['/admin/addBook']" class="dropdown-item" data-key="t-calendar">Add book</a>
+                          <a [routerLink]="['/admin/viewBook']" class="dropdown-item" data-key="t-chat">View book details</a>
+                          <a [routerLink]="['/admin/booksList']" class="dropdown-item" data-key="t-chat">Books list</a>
+                          <a [routerLink]="['/admin/addCategory']" class="dropdown-item" data-key="t-chat">Add book Category</a>
+                      </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" id="topnav-pages" role="button">
+                        <i data-feather="grid"></i><span data-key="t-apps">Loans</span> <div class="arrow-down"></div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                        <a [routerLink]="['/admin/issueBookLoan']" class="dropdown-item" data-key="t-calendar">Issue book loan</a>
+                        <a [routerLink]="['/admin/viewLoanDetails']" class="dropdown-item" data-key="t-chat">View loan Details</a>
+                        <a [routerLink]="['/admin/viewLoanListing']" class="dropdown-item" data-key="t-chat">View loans list</a>
+                    </div>
+                 </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" id="topnav-pages" role="button">
+                        <i data-feather="grid"></i><span data-key="t-apps">Reservations</span> <div class="arrow-down"></div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                        <a [routerLink]="['/admin/viewReservationDetails']" class="dropdown-item" data-key="t-chat">View reservation details</a>
+                        <a [routerLink]="['/admin/reservationsList']" class="dropdown-item" data-key="t-chat">Book reservations list</a>
+                    </div>
+                 </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" id="topnav-pages" role="button">
+                        <i data-feather="grid"></i><span data-key="t-apps">Fines</span> <div class="arrow-down"></div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                        <a [routerLink]="['/admin/addFine']" class="dropdown-item" data-key="t-chat">Add fine</a>
+                        <a [routerLink]="['/admin/fineList']" class="dropdown-item" data-key="t-chat">Fines list</a>
+                        <a [routerLink]="['/admin/viewFine']" class="dropdown-item" data-key="t-chat">View fine Details</a>
+                    </div>
+                 </li>
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle arrow-none" id="topnav-pages" role="button">
+                        <i data-feather="grid"></i><span data-key="t-apps">Membership</span> <div class="arrow-down"></div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="topnav-pages">
+                        <a [routerLink]="['/admin/addMembershipType']" class="dropdown-item" data-key="t-chat">Create membership type</a>
+                        <a [routerLink]="['/admin/viewMembershipType']" class="dropdown-item" data-key="t-chat">View membership types</a>
+                        <a [routerLink]="['/admin/addMembership']" class="dropdown-item" data-key="t-chat">Add library membership</a>
+                        <a [routerLink]="['/admin/viewMembership']" class="dropdown-item" data-key="t-chat">View membership details</a>
+                        <a [routerLink]="['/admin/addMember']" class="dropdown-item" data-key="t-chat">Add member</a>
+                        <a [routerLink]="['/admin/viewMember']" class="dropdown-item" data-key="t-chat">View member</a>
+                        <a [routerLink]="['/admin/membersList']" class="dropdown-item" data-key="t-chat">Members list</a>
+                    </div>
+                 </li>
+              </ul>
+          </div>
+      </nav>
+  </div>
+</div>

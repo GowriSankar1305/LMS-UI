@@ -1,0 +1,56 @@
+<div id="layout-wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Books present in the library</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table mb-0 table-bordered">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Book id</th>
+                                            <th>ISBN</th>
+                                            <th>Book title</th>
+                                            <th>No of pages</th>
+                                            <th>No of copies</th>
+                                            <th>Published date</th>
+                                            <th>Availability status</th>
+                                            <th>Book price</th>
+                                            <th>Category</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let book of booksList">
+                                            <th scope="row"><a (click)="sendBookId(book.bookId)" role="button" style="color: brown;">{{book.bookId}}</a></th>
+                                            <td>{{book.isbn}}</td>
+                                            <td>{{book.bookTitle}}</td>
+                                            <td>{{book.noOfPages}}</td>
+                                            <td>{{book.noOfAvailableCopies}}</td>
+                                            <td>{{book.publishedDate?.year}}-{{book.publishedDate?.month}}-{{book.publishedDate?.day}}</td>
+                                            <td>{{book.isAvailable}}</td>
+                                            <td>{{book.bookPrice}}</td>
+                                            <td>{{book.bookCategory}}</td>
+                                        </tr>
+                                        <tr *ngIf="booksList.length === 0">
+                                            <td colspan="9" align="center">
+                                                No books added in to the library!
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

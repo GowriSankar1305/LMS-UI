@@ -1,0 +1,83 @@
+<div id="layout-wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Create a new membership type</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Membership type creation form</h4>
+                        </div>
+                        <form (submit)="createNewMembershipType()">
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="mbspType" class="form-label">Membership type</label>
+                                        <input class="form-control" type="text" id="mbspType" name="mbspType" [(ngModel)]="mbspType.membershipType">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="mbspCost" class="form-label">Membership cost</label>
+                                        <input class="form-control" type="text" id="mbspCost" name="mbspCost" [(ngModel)]="mbspType.cost">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="mbspTimeline" class="form-label">Membership timeline</label>
+                                        <input class="form-control" type="text" id="mbspTimeline" name="mbspTimeline" [(ngModel)]="mbspType.timelineLimit">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="mbspTimelineType" class="form-label">Membership timeline type</label>
+                                        <select class="form-select" data-trigger name="mbspTimelineType" id="mbspTimelineType" [(ngModel)]="mbspType.membershipTimeline">
+                                            <option value=""> --- set timeline type --- </option>
+                                            <option value="MONTHS">MONTHS</option>
+                                            <option value="YEARS">YEARS</option>
+                                            <option value="WEEKS">WEEKS</option>
+                                            <option value="DAYS">DAYS</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="borrowingLimit" class="form-label">Max no of books can be borrowed</label>
+                                        <input class="form-control" type="text" id="borrowingLimit" name="borrowingLimit" [(ngModel)]="mbspType.borrowingLimit">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <p class="form-label text-success" [innerHTML]="successMsg"></p>
+                                        <p class="form-label text-danger" [innerHTML]="errorMsg"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button id="sbBtn" type="submit" class="btn btn-success" [disabled]="isBtnDisabled" [innerHTML]="btnContent"></button>
+                                </div>
+                            </div>
+                        </div>
+                       </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

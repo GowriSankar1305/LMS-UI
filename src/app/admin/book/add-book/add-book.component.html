@@ -1,0 +1,158 @@
+<div id="layout-wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="main-content">
+        <div class="page-content">
+          <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                        <h4 class="mb-sm-0 font-size-18">Add a book to library</h4>
+                    </div>
+                </div>
+            </div>
+            <form (submit)="addBookToLibrary()">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Enter book details</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="isbn" class="form-label">ISBN</label>
+                                            <input class="form-control" type="text" id="isbn" name="isbn" [(ngModel)]="addBook.isbn">
+                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="bookTitle" class="form-label">Book title</label>
+                                        <input class="form-control" type="text" id="bookTitle" name="bookTitle" [(ngModel)]="addBook.bookTitle">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="bookDescription" class="form-label">Book description</label>
+                                            <input class="form-control" type="text" id="bookDescription" name="bookDescription" [(ngModel)]="addBook.bookDescription">
+                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="noOfPages" class="form-label">No of pages</label>
+                                        <input class="form-control" type="text" id="noOfPages" name="noOfPages" [(ngModel)]="addBook.noOfPages">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="noOfAvailableCopies" class="form-label">No of copies available</label>
+                                            <input class="form-control" type="text" id="noOfAvailableCopies" name="noOfAvailableCopies" [(ngModel)]="addBook.noOfAvailableCopies">
+                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="choices-single-default" class="form-label">Set book availability status</label>
+                                        <select class="form-select" data-trigger name="choices-single-default"
+                                            id="choices-single-default"
+                                            placeholder="This is a search placeholder">
+                                            <option value=""> --- set status --- </option>
+                                            <option value="true">AVAILABLE</option>
+                                            <option value="false">NOT AVAILABLE</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="h6">Published date</p>
+                                    <div class="mb-3">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="publishedYear" class="form-label font-size-13 text-muted">Year</label>
+                                                <select class="form-select" data-trigger name="publishedYear" id="publishedYear" [(ngModel)]="publishedDate.year">
+                                                    <option value="0"> --- set year --- </option>
+                                                    <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="publishedMonth" class="form-label font-size-13 text-muted">Month</label>
+                                                <select class="form-select" data-trigger name="publishedMonth" id="publishedMonth" [(ngModel)]="publishedDate.month" (change)="fetchDays()">
+                                                    <option value=""> --- set month --- </option>
+                                                    <option *ngFor="let month of months; index as i" value="{{i+1}}">{{month}}</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="publishedDay" class="form-label font-size-13 text-muted">Day</label>
+                                                <select class="form-select" data-trigger name="publishedDay" id="publishedDay" [(ngModel)]="publishedDate.day">
+                                                    <option value="0"> --- set day --- </option>
+                                                    <option *ngFor="let day of days" value="{{day}}">{{day}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="bookCategory" class="form-label">Select book category</label>
+                                        <select class="form-select" data-trigger name="bookCategory" id="bookCategory" [(ngModel)]="addBook.categoryId">
+                                            <option value="0"> --- set category --- </option>
+                                            <option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.categoryName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="bookPrice" class="form-label">Book price</label>
+                                            <input class="form-control" type="text" id="bookPrice" name="bookPrice" [(ngModel)]="addBook.bookPrice">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <br>
+                                        <button type="button" class="btn btn-secondary waves-effect waves-light" (click)="appendAuthorForm()">
+                                            <i class="bx bx-plus-medical font-size-16 align-middle me-2"></i> Add author
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" *ngFor="let author of authors; index as i">
+                                <div class="col-md-5">
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">Author {{i+1}} first name</label>
+                                        <input class="form-control" [(ngModel)]="author.firstName" type="text" id="author{{i}}FirstName" name="author{{i}}FirstName">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="mb-3">
+                                        <label for="example-text-input" class="form-label">Author {{i+1}} last name</label>
+                                        <input class="form-control" [(ngModel)]="author.lastName" type="text" id="author{{i}}LastName" name="author{{i}}LastName">
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="mb-3">
+                                        <label class="form-label">Remove author</label><br>
+                                        <button (click)="removeAuthor(i)" type="button" class="btn btn-soft-danger waves-effect waves-light"><i class="bx bxs-minus-circle font-size-16 align-middle"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light" [disabled]="btnDisabled" [innerHTML]="btnContent"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div>
+           </form>
+          </div>
+        </div>
+    </div>  
+</div>
