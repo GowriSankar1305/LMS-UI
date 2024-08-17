@@ -1,0 +1,234 @@
+<div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <h2>Registration form</h2>
+        <p class="lead">Submit all the information required in this form adn our admin will review and initiate the account creation</p>
+      </div>
+  
+      <div class="row">
+        <div class="card p-5">
+          <div class="col-12">
+            <h4 class="mb-3">Personal details</h4>
+              <form class="needs-validation">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="firstName" placeholder="First name" name="firstName" [(ngModel)]="customer.firstName">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last name" name="lastName" [(ngModel)]="customer.lastName">
+                  </div>
+                  <div class="col-sm-6">
+                      <input type="text" class="form-control" id="middleName" placeholder="Middle name" name="middleName" [(ngModel)]="customer.middleName">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="email" class="form-control" id="emailId" placeholder="Email id" name="emailId" [(ngModel)]="customer.emailId">
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="pan" placeholder="1234 Main St" name="pan" [(ngModel)]="customer.pan">
+                  </div>
+                  <div class="col-sm-6">
+                    <select class="form-select" id="customerTitle" name="customerTitle" [(ngModel)]="customer.customerTitle">
+                      <option value="">--- Select salutation ---</option>
+                      <option *ngFor="let title of salutations" value="{{title}}">{{title}}</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="male">
+                      <label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="female">
+                      <label class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="others">
+                      <label class="form-check-label" for="inlineRadio3">Others</label>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4">
+                <h4 class="mb-3">Present address</h4>
+                <div class="row gy-3">
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentStateId" name="presentStateId" [(ngModel)]="customerPresentAddrs.stateId">
+                      <option value="gbh" selected>--- Select State ---</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentDistrictId" [(ngModel)]="customerPresentAddrs.districtId" name="presentDistrictId">
+                      <option value="rty" selected>--- Select District ---</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentSubDistrictId" [(ngModel)]="customerPresentAddrs.subDistrictId" name="presentSubDistrictId">
+                      <option value="we" selected>--- Select Sub district ---</option>
+                    </select> 
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentVillageId" [(ngModel)]="customerPresentAddrs.villageId" name="presentVillageId">
+                      <option value="qwe" selected>--- Select Village ---</option>
+                    </select>  
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="Pincode" placeholder="Pincode" [(ngModel)]="customerPresentAddrs.pinCode" name="pinCode">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="doorNo" placeholder="Door no" [(ngModel)]="customerPresentAddrs.doorNo" name="doorNo">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="addressLine" placeholder="Address line" [(ngModel)]="customerPresentAddrs.addressLine" name="addressLine">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="landMark" placeholder="Land mark" [(ngModel)]="customerPresentAddrs.landMark" name="landMark">
+                  </div>
+                </div>
+                <hr class="my-4">
+                <h4 class="mb-3">Permanent address</h4>
+                <div class="row gy-3">
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentStateId" name="permStateId" [(ngModel)]="customerPermanentAddrs.stateId">
+                      <option value="gbh" selected>--- Select State ---</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentDistrictId" [(ngModel)]="customerPermanentAddrs.districtId" name="permDistrictId">
+                      <option value="rty" selected>--- Select District ---</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentSubDistrictId" [(ngModel)]="customerPermanentAddrs.subDistrictId" name="permSubDistrictId">
+                      <option value="we" selected>--- Select Sub district ---</option>
+                    </select> 
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentVillageId" [(ngModel)]="customerPermanentAddrs.villageId" name="permVillageId">
+                      <option value="qwe" selected>--- Select Village ---</option>
+                    </select>  
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="Pincode" placeholder="Pincode" [(ngModel)]="customerPermanentAddrs.pinCode" name="permPinCode">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="doorNo" placeholder="Door no" [(ngModel)]="customerPermanentAddrs.doorNo" name="permDoorNo">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="addressLine" placeholder="Address line" [(ngModel)]="customerPermanentAddrs.addressLine" name="permAddressLine">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="landMark" placeholder="Land mark" [(ngModel)]="customerPermanentAddrs.landMark" name="permLandMark">
+                  </div>
+                </div>
+                <hr class="my-4">
+                <h4 class="mb-3">Nominee details</h4>
+                <div class="row gy-3">
+                  <div class="col-md-6">
+                    <select class="form-select" id="nomineeRel" name="nomineeRel" [(ngModel)]="nominee.nomineeRelation">
+                      <option value="opi" selected="true">--- Select nominne relation ---</option>
+                      <option value="dfgdf">SDFEFEG</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="nomineeName" placeholder="Nominee full name" name="nomineeName" [(ngModel)]="nominee.nomineeName">
+                  </div>
+                  <h6 class="mb-3">Nominee address</h6>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentStateId" name="permStateId" [(ngModel)]="customerPermanentAddrs.stateId">
+                      <option value="gbh" selected>--- Select State ---</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentDistrictId" [(ngModel)]="customerPermanentAddrs.districtId" name="permDistrictId">
+                      <option value="rty" selected>--- Select District ---</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentSubDistrictId" [(ngModel)]="customerPermanentAddrs.subDistrictId" name="permSubDistrictId">
+                      <option value="we" selected>--- Select Sub district ---</option>
+                    </select> 
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="presentVillageId" [(ngModel)]="customerPermanentAddrs.villageId" name="permVillageId">
+                      <option value="qwe" selected>--- Select Village ---</option>
+                    </select>  
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="Pincode" placeholder="Pincode" [(ngModel)]="customerPermanentAddrs.pinCode" name="permPinCode">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="doorNo" placeholder="Door no" [(ngModel)]="customerPermanentAddrs.doorNo" name="permDoorNo">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="addressLine" placeholder="Address line" [(ngModel)]="customerPermanentAddrs.addressLine" name="permAddressLine">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="landMark" placeholder="Land mark" [(ngModel)]="customerPermanentAddrs.landMark" name="permLandMark">
+                  </div>
+                </div>
+                <hr class="my-4">
+                <h4 class="mb-3">Other details</h4>
+                <div class="row gy-3">
+                  <div class="col-md-4">
+                    <select class="form-select" id="birthYear" name="birthYear" [(ngModel)]="dob.year">
+                      <option value="opi" selected="true">--- Select birth year ---</option>
+                      <option value="dfgdf">SDFEFEG</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" id="birthMonth" name="birthMonth" [(ngModel)]="dob.month">
+                      <option value="opi" selected="true">--- Select birth month ---</option>
+                      <option value="dfgdf">SDFEFEG</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" id="birthDate" name="birthDate" [(ngModel)]="dob.day">
+                      <option value="opi" selected="true">--- Select birth date ---</option>
+                      <option value="dfgdf">SDFEFEG</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="form-select" id="idProofType" name="idProofType" [(ngModel)]="customer.idProofType">
+                      <option value="opi" selected="true">--- Select ID proof type ---</option>
+                      <option *ngFor="let proof of idProofTypes" value="{{proof}}">{{proof}}</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="idProofNumber" placeholder="ID proof number" name="idProofNumber" [(ngModel)]="customer.idProofNumber">
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" id="marritalStatus" name="marritalStatus" [(ngModel)]="customer.marritalStatus">
+                      <option value="opi" selected="true">--- Select Marrital status ---</option>
+                      <option value="dfgdf">SDFEFEG</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" id="occupation" name="occupation" [(ngModel)]="customer.occupation">
+                      <option value="opi" selected="true">--- Select Occupation ---</option>
+                      <option value="dfgdf">SDFEFEG</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <select class="form-select" id="religion" name="religion" [(ngModel)]="customer.religion">
+                      <option value="opi" selected="true">--- Select religion ---</option>
+                      <option value="dfgdf">SDFEFEG</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" id="annualIncome" placeholder="Annual income" name="annualIncome" [(ngModel)]="customer.annualIncome">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" id="countryOfBirth" placeholder="Country of birth" name="countryOfBirth" [(ngModel)]="customer.countryOfBirth">
+                  </div>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control" id="placeOfBirth" placeholder="Place of birth" name="placeOfBirth" [(ngModel)]="customer.placeOfBirth">
+                  </div>
+                </div>
+                <div class="mt-3">
+                  <button class="w-100 btn btn-primary btn-lg" type="submit">Create account request</button>
+                </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
